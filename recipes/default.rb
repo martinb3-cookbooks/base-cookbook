@@ -6,10 +6,6 @@
 #
 #
 
-include_recipe 'user::data_bag'
-include_recipe 'martinb3-base::packages'
-include_recipe 'martinb3-base::iptables'
-
 include_recipe 'ntp'
 include_recipe 'timezone-ii'
 include_recipe 'auto-patch'
@@ -21,6 +17,10 @@ include_recipe 'rsyslog'
 include_recipe 'omnibus_updater'
 include_recipe 'openssh'
 include_recipe 'sudo'
+
+include_recipe 'user::data_bag'
+include_recipe 'martinb3-base::packages'
+include_recipe 'martinb3-base::iptables'
 
 include_recipe 'motd-tail'
 motd_tail '/etc/motd' do
