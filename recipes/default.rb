@@ -20,7 +20,7 @@ include_recipe 'sudo'
 
 include_recipe 'user::data_bag'
 include_recipe 'martinb3-base::packages'
-include_recipe 'martinb3-base::iptables'
+include_recipe 'martinb3-base::iptables' if node['martinb3-base']['iptables']
 
 include_recipe 'motd-tail'
 motd_tail '/etc/motd' do
